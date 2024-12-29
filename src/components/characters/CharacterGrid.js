@@ -1,15 +1,19 @@
-import Spinner from '../../Spinner';
+import Spinner from '../Spinner';
 import CharacterItem from './CharacterItem';
 
-function CharacterGrid({ isLoading, items }) {
-  return isLoading ? (
-    <Spinner />
-  ) : (
-    <section className='cards'>
-      {items.map((item) => (
-        <CharacterItem item={item} key={item.id} />
-      ))}
-    </section>
+function CharacterGrid({ items, isLoading }) {
+  return (
+    <div>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <div className='cards'>
+          {items.map((item) => (
+            <CharacterItem item={item} key={item.id} />
+          ))}
+        </div>
+      )}
+    </div>
   );
 }
 

@@ -1,4 +1,4 @@
-import spinner from './img/spinner.gif';
+import spinner from '../img/spinner.gif';
 
 function Spinner() {
   return (

@@ -1,9 +1,9 @@
-import { useState } from 'react';
 import './App.css';
-import Header from './components/Header';
 import { useEffect } from 'react';
+import { useState } from 'react';
 import CharacterGrid from './components/characters/CharacterGrid';
-import Search from './Search';
+import Header from './components/Header';
+import Search from './components/Search';
 
 function App() {
   const [items, setItems] = useState([]);
@@ -17,8 +17,10 @@ function App() {
 
       setItems(data.results);
       setIsLoading(false);
-      console.log(data);
+
+      console.log(data.results);
     }
+
     fetchItems();
   }, [query]);
 
@@ -26,7 +28,7 @@ function App() {
     <div className='container'>
       <Header />
       <Search getQuery={(q) => setQuery(q)} />
-      <CharacterGrid isLoading={isLoading} items={items} />
+      <CharacterGrid items={items} isLoading={isLoading} />
     </div>
   );
 }
