@@ -1,12 +1,13 @@
+import Spinner from '../../Spinner';
 import CharacterItem from './CharacterItem';
 
 function CharacterGrid({ isLoading, items }) {
   return isLoading ? (
-    <h1>Loading...</h1>
+    <Spinner />
   ) : (
     <section className='cards'>
       {items.map((item) => (
-        <CharacterItem item={item} key={item.id}/>
+        <CharacterItem item={item} key={item.id} />
       ))}
     </section>
   );
